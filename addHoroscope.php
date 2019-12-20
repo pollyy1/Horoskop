@@ -10,7 +10,6 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
       if(isset($_POST["date"])) {
        $_SESSION["date"] = serialize($_POST["date"]);
        }  
-       //$('#saveBtn').prop('disabled', true);
             $fullDate= strtotime(unserialize($_SESSION["date"]));
             echo $fullDate;
             if ($fullDate){
@@ -20,7 +19,6 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
            if (!isset($_SESSION["horoscopes"])){
             include "calculate.php";
               $_SESSION["horoscopes"] = calcSign($month, $day);
-               //$_SESSION["horoscopes"] = calcSign("", "");
               
                 echo true;
            }}
